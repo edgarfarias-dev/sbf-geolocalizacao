@@ -1,14 +1,16 @@
 @icon: i-sbf-;
 @black: #000;
 @dark: #292b2c;
-@gray: #f4f4f4;
-@gray_stronger: #ccc;
+@darkgreen: #006400;
+@light_gray: #f4f4f4;
+@gray: #7e7d7d;
+@border_gray: #ccc;
 @white: #fff;
 
 /* dividers */
 .top-divider {
   height: 3.5rem;
-  background-color: @gray;
+  background-color: @light_gray;
   border-width: 1px 0;
 }
 .upper-divider {
@@ -20,6 +22,10 @@
   span {
     font-size: 15px;
   }
+}
+
+.map-container {
+  margin: 30px 0;
 }
 
 .bottom-divider {
@@ -84,8 +90,8 @@ body {
   width: 180px;
   padding-left: 25px;
   border-radius: 2.5rem;
-  border: solid thin @gray;
-  background-color: @gray;
+  border: solid thin @light_gray;
+  background-color: @light_gray;
   height: 2.5rem;
   outline: none;
 }
@@ -97,7 +103,7 @@ body {
 }
 .sbf-busca-icon {
   border-radius: 2.5rem;
-  background-color: @gray;
+  background-color: @light_gray;
   padding: 8px 0 8px 15px;
   align-items: center;
 }
@@ -108,9 +114,9 @@ body {
   height: 3rem;
   border-radius: 2.5rem;
   border-left: none;
-  border-top: solid 1px @gray_stronger;
-  border-right: solid 1px @gray_stronger;
-  border-bottom: solid 1px @gray_stronger;
+  border-top: solid 1px @border_gray;
+  border-right: solid 1px @border_gray;
+  border-bottom: solid 1px @border_gray;
   background-color: @white;
 }
 .sbf-busca-coordenada:focus {
@@ -121,7 +127,7 @@ body {
 }
 .sbf-busca-coordenada-icon {
   border-radius: 2.5rem;
-  border: solid 1px @gray_stronger;
+  border: solid 1px @border_gray;
   background-color: @white;
   padding: 11px 0 11px 20px;
   align-items: center;
@@ -175,6 +181,9 @@ body {
   font-weight: bold;
   border-radius: 1.5rem;
   height: 3rem;
+  &:hover {
+    color: @gray;
+  }
 }
 .sbf-btn-cadastrar {
   &:extend(.sbf-btn-buscar);
@@ -199,4 +208,39 @@ body {
 .hr-footer {
   color: @white;
   margin: 30px 0;
+}
+
+
+/* MAP */
+.map-description {
+  background-color: @light_gray;
+  margin: 0 20px;
+  padding: 20px 10px 20px 20px;
+  border-radius: 0.5rem;
+
+  .map-description-sort {
+    font-weight: 500;
+    font-size: 13px;
+    display: flex;
+  }
+
+  .map-description-header {
+    padding: 20px 0 0 0;
+    margin: 0 15px 0 0;
+  }
+}
+.map-card {
+  background-color: @white;
+  padding: 30px 25px;
+  border-radius: 0.5rem;
+  margin: 0 15px 0 0;
+  span {
+    color: @gray;
+    display: flex;
+    font-size: smaller;
+  }
+  .map-card-availability {
+    color: @darkgreen;
+    font-weight: bold;
+  }
 }

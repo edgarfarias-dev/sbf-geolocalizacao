@@ -15,6 +15,9 @@
 .middle-divider span {
   font-size: 15px;
 }
+.map-container {
+  margin: 30px 0;
+}
 .bottom-divider {
   height: 20rem;
 }
@@ -251,6 +254,9 @@ body {
   border-radius: 1.5rem;
   height: 3rem;
 }
+.sbf-btn-buscar:hover {
+  color: #7e7d7d;
+}
 .sbf-btn-cadastrar {
   width: 200px;
 }
@@ -272,5 +278,36 @@ body {
 .hr-footer {
   color: #fff;
   margin: 30px 0;
+}
+/* MAP */
+.map-description {
+  background-color: #f4f4f4;
+  margin: 0 20px;
+  padding: 20px 10px 20px 20px;
+  border-radius: 0.5rem;
+}
+.map-description .map-description-sort {
+  font-weight: 500;
+  font-size: 13px;
+  display: flex;
+}
+.map-description .map-description-header {
+  padding: 20px 0 0 0;
+  margin: 0 15px 0 0;
+}
+.map-card {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 0.5rem;
+  margin: 0 15px 0 0;
+}
+.map-card span {
+  color: #7e7d7d;
+  display: flex;
+  font-size: smaller;
+}
+.map-card .map-card-availability {
+  color: #006400;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
