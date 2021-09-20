@@ -22,26 +22,31 @@
         <middle-divider></middle-divider>
     </section>
     <section class="main-content">
-        <div class="container text-md-center">
-            <div class="row justify-content-md-center">
-                <div class="col-md-12 sbf-title">
+        <div class="container text-sm-center">
+            <div class="row justify-content-sm-center">
+                <div class="col-sm-12 sbf-title">
                     <h2 class="fw-bold">Lojas</h2>
                 </div>
                 <div class="d-flex col-md-7 align-items-center" style="width: auto">
-                    <div class="d-flex input-group">
+                    <div class="d-md-flex input-group">
                         <span class="sbf-busca-coordenada-icon">
                             <i class="i-sbf-lupa"></i>
                         </span>
                         <input id="coords" type="text" class="sbf-busca-coordenada text-dark" placeholder="Buscar por coordenada">
                     </div>
-                    <span class="d-flex">
+                    <span class="d-none d-md-flex">
+                        <button type="button" @click="getMapByCoords" class="btn sbf-btn-buscar">Buscar</button>
+                    </span>
+                </div>
+                <div class="d-flex col-sm-12 align-items-baseline justify-content-center d-block d-md-none">
+                    <span class="d-sm-flex">
                         <button type="button" @click="getMapByCoords" class="btn sbf-btn-buscar">Buscar</button>
                     </span>
                 </div>
             </div>
 
             <div class="d-flex col-md-12 map-container">
-                <div v-if="storesByDistanceFromLocation.length" class="col-md-6">
+                <div v-if="storesByDistanceFromLocation.length" class="col-md-6 col-sm-12">
                     <div class="map-description">
                         <span class="map-description-sort">Menor distância <i class="i-sbf-seta-baixo px-3"></i></span>
 
@@ -71,7 +76,7 @@
 
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <div id="map" style="height: 100%"></div>
                 </div>
             </div>
