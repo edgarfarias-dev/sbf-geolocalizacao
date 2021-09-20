@@ -295,6 +295,9 @@ body {
   padding: 20px 0 0 0;
   margin: 0 15px 0 0;
 }
+.map-description .map-pin-modal i {
+  width: 1em;
+}
 .map-card {
   background-color: #fff;
   padding: 30px 25px;
@@ -320,6 +323,9 @@ body {
   }
   .map-description {
     margin: 0;
+  }
+  #map {
+    height: 400px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

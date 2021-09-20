@@ -47,7 +47,7 @@ let app = new Vue({
                 }
             });
         },
-        initMap: (lat, lng) => {
+        initMap: (lat, lng, mapId) => {
             let map;
             let service;
             let infowindow;
@@ -55,7 +55,7 @@ let app = new Vue({
             const location = new google.maps.LatLng(lat, lng);
 
             infowindow = new google.maps.InfoWindow();
-            map = new google.maps.Map(document.getElementById("map"), {
+            map = new google.maps.Map(document.getElementById(mapId), {
                 center: location,
                 zoom: 13,
             });
@@ -106,11 +106,22 @@ let app = new Vue({
             }
         },
         getMapByCoords: () => {
-            const coords = document.getElementById('coords').value.split(',');
+            const inputValue = $('#coords').val();
+            if (!inputValue.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/)) {
+                $('#modalError').modal('show')
+                return false;
+            }
+            const coords = inputValue.split(',');
             app.$data.lat = coords[0];
             app.$data.lng = coords[1];
 
-            app.initMap(app.$data.lat,app.$data.lng);
+            app.initMap(app.$data.lat,app.$data.lng, "map");
+        },
+        toggleMapFullscreen: () => {
+            setTimeout(() => {
+                app.initMap(app.$data.lat,app.$data.lng, "mapFullscreen");
+            },500)
+            //document.getElementById('mapClone').innerHTML = document.getElementById('map').innerHTML
         }
     }
 })
